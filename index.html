@@ -73,36 +73,40 @@ nav.scrolled::before { opacity: 1; }
 nav.scrolled { padding: 1rem 4rem; }
 
 .nav-logo {
-  font-family: 'Playfair Display', serif;
   text-decoration: none;
   position: relative; z-index: 1;
   display: inline-flex; flex-direction: column; line-height: 1;
-  gap: 2px;
-}
-.nav-logo .logo-the {
-  font-size: 0.52rem; letter-spacing: 0.48em; text-transform: uppercase;
-  color: var(--champagne); font-style: normal; font-weight: 400;
-  font-family: 'Jost', sans-serif;
+  gap: 4px;
 }
 .nav-logo .logo-main {
-  font-size: 1.3rem; font-weight: 700; letter-spacing: 0.1em;
-  color: var(--ivory); font-style: normal; line-height: 1;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem; font-weight: 300; font-style: italic;
+  letter-spacing: 0.04em;
+  color: var(--ivory); line-height: 1;
   position: relative;
+  transition: color 0.3s;
+}
+.nav-logo .logo-main .logo-word-two {
+  font-style: normal; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  font-size: 0.72em;
+  color: var(--champagne);
+  vertical-align: middle;
+  margin-left: 0.18em;
 }
 .nav-logo .logo-main::after {
   content: '';
-  position: absolute; bottom: -3px; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--wave), var(--champagne), transparent);
+  position: absolute; bottom: -4px; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, var(--champagne), var(--wave), transparent);
   border-radius: 2px; transform: scaleX(0); transform-origin: left;
-  transition: transform 0.4s var(--transition);
+  transition: transform 0.45s var(--transition);
 }
 .nav-logo:hover .logo-main::after { transform: scaleX(1); }
-.nav-logo .logo-main em {
-  font-style: italic; color: var(--champagne); font-weight: 300;
-}
+.nav-logo:hover .logo-main { color: var(--ivory); }
 .nav-logo .logo-sub {
-  font-size: 0.48rem; letter-spacing: 0.35em; text-transform: uppercase;
+  font-size: 0.46rem; letter-spacing: 0.42em; text-transform: uppercase;
   color: var(--text-dim); font-family: 'Jost', sans-serif; font-weight: 300;
+  padding-left: 0.1em;
 }
 
 .nav-center {
@@ -760,24 +764,26 @@ footer {
 #splash.hidden { opacity: 0; pointer-events: none; transform: translateY(-20px); }
 
 .splash-logo-wrap {
-  display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
+  display: flex; flex-direction: column; align-items: center; gap: 1.1rem;
   animation: splashFadeUp 0.8s 0.2s var(--transition) both;
 }
 @keyframes splashFadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
 
 .splash-line1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 10vw, 3.2rem);
-  font-weight: 700; letter-spacing: 0.12em;
+  font-size: clamp(3rem, 14vw, 5.5rem);
+  font-weight: 300; font-style: italic;
+  letter-spacing: 0.02em;
   color: var(--ivory); line-height: 1; white-space: nowrap;
 }
 .splash-line1 .splash-accent { color: var(--champagne); font-style: italic; }
 .splash-line2 {
   font-family: 'Jost', sans-serif;
-  font-size: clamp(1rem, 5vw, 1.6rem);
-  font-weight: 200; letter-spacing: 0.55em;
-  color: var(--ivory); opacity: 0.85; line-height: 1;
+  font-size: clamp(0.65rem, 3.5vw, 0.9rem);
+  font-weight: 300; letter-spacing: 0.75em;
+  color: var(--champagne); opacity: 0.9; line-height: 1;
   text-transform: uppercase;
+  padding-left: 0.75em; /* optical balance for the tracking */
 }
 .splash-rule {
   width: 1px; height: 40px;
@@ -907,8 +913,8 @@ footer {
 <!-- SPLASH -->
 <div id="splash">
   <div class="splash-logo-wrap">
-    <div class="splash-line1">WIL<span class="splash-accent">FORD</span></div>
-    <div class="splash-line2">VISUALS</div>
+    <div class="splash-line1"><span class="splash-accent">Wilford</span></div>
+    <div class="splash-line2">Visuals</div>
   </div>
   <div class="splash-rule"></div>
   <div class="splash-wave"><div class="splash-wave-inner"></div></div>
@@ -933,7 +939,7 @@ footer {
 
 <!-- NAV -->
 <nav id="mainNav">
-  <a class="nav-logo" href="#" onclick="showPage('home')"><span class="logo-main">WILFORD VISUALS</span><span class="logo-sub">Photography · Accra</span></a>
+  <a class="nav-logo" href="#" onclick="showPage('home')"><span class="logo-main"><em>Wilford</em><span class="logo-word-two">Visuals</span></span><span class="logo-sub">Photography · Accra, Ghana</span></a>
   <ul class="nav-center">
     <li><a href="#" onclick="showPage('home')" data-page="home" class="active">Home</a></li>
     <li><a href="#" onclick="showPage('gallery')" data-page="gallery">Gallery</a></li>
@@ -1429,7 +1435,7 @@ footer {
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="nav-logo" href="#" onclick="showPage('home')"><span class="logo-main">WILFORD VISUALS</span><span class="logo-sub">Photography · Accra</span></a>
+        <a class="nav-logo" href="#" onclick="showPage('home')"><span class="logo-main"><em>Wilford</em><span class="logo-word-two">Visuals</span></span><span class="logo-sub">Photography · Accra, Ghana</span></a>
         <p class="footer-tagline">Photography, videography & drone services based in Accra, Ghana. Weddings · Events · Brands · Portraits — DM for bookings.</p>
         <div class="social-row">
           <a class="social-pill" href="#">📷</a>
